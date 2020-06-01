@@ -1,0 +1,33 @@
+{
+  "name": "react-ssr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "webpack:client": "webpack --mode development --config webpack.client.js --watch",
+    "webpack:server": "webpack --mode development --config webpack.server.js --watch",
+    "webpack:start": "nodemon --watch build --exec node build/bundle.js",
+    "dev": "npm-run-all --parallel webpack:*",
+    "build": "webpack --mode production --config  webpack.client.js && webpack --mode production --config webpack.server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
